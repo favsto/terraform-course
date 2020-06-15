@@ -22,10 +22,10 @@ terraform init
 
 terraform plan -out "test.plan" -var gcp_project=<your-project-id>
 
-terraform apply
+terraform apply test.plan
 ```
 
-As the instance has been created the last command will output its external IP address. Try it:
+As the instance has been created the last command will output its external IP address. Try the Web Server (it might take few seconds to start):
 
 ```
 curl http://<external-ip>
@@ -33,7 +33,7 @@ curl http://<external-ip>
 
 ## Clean up
 
-To clean up run:
+To clean up run: -var gcp_project=<your-project-id>
 
 ```
 terraform destroy
