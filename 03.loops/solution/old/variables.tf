@@ -1,4 +1,5 @@
 variable "gcp_project" {
+  description = "The ID of the Google Cloud Platform project to use"
   type = string
 }
 
@@ -34,4 +35,9 @@ variable "web_server_fw_rule" {
         ],
         icmp : []
     }
+}
+
+variable "expose_instance" {
+    type    = bool
+    default = false
 }

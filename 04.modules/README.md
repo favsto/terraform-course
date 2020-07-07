@@ -1,4 +1,4 @@
-# Terraform course - Lab 02 - Basics
+# 01 - Basics
 
 ## Requirements
 
