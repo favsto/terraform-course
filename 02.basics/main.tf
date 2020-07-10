@@ -1,4 +1,6 @@
 variable "gcp_project" {
+  type = string
+  description = "The ID of the Google Cloud project"
 }
 
 provider "google" {
@@ -31,11 +33,11 @@ resource "google_compute_instance" "default" {
   }
 
   // Apply the firewall rule to allow external IPs to access this instance
-  tags = ["http-server"]
+  tags = ["http-server-${random_id.instance_id.hex}"]
 }
 
 resource "google_compute_firewall" "http-server" {
-  name    = "default-allow-http"
+  name    = "default-allow-http-${random_id.instance_id.hex}"
   network = "default"
 
   allow {
@@ -45,7 +47,7 @@ resource "google_compute_firewall" "http-server" {
 
   // Allow traffic from everywhere to instances with an http-server tag
   source_ranges = ["0.0.0.0/0"]
-  target_tags   = ["http-server"]
+  target_tags   = ["http-server-${random_id.instance_id.hex}"]
 }
 
 output "ip" {
