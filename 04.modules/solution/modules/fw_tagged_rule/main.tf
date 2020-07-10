@@ -1,6 +1,6 @@
 # main.tf
 
-resource "google_compute_firewall" "fw_server" {
+resource "google_compute_firewall" "fw_rule" {
   name    = var.name
   network = "default" # intentionally left static
 
