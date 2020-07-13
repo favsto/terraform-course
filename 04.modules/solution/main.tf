@@ -21,7 +21,7 @@ module "web_instance" {
   project_id   = var.gcp_project
   name         = local.vm_name
   zones        = var.covered_zones
-  network_tags = [local.http_tag_name]
+  network_tags = [local.http_tag_name, local.icmp_tag_name]
   is_exposed   = var.expose_instances
 }
 
