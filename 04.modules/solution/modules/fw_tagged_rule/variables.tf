@@ -19,7 +19,7 @@ variable "rule_details" {
 
 variable "target_tags" {
   type        = list(string)
-  description = "The list of tags this firewall rule belogs to"
+  description = "The list of tags this firewall rule belongs to"
 }
 
 variable "source_ranges" {

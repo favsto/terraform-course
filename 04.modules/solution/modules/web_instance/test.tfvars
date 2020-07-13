@@ -1,4 +1,4 @@
-# variables.tf
+# test.tfvars
 
 project_id = "injenia-lab-gcp-demo"
 
